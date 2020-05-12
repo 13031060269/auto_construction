@@ -1,0 +1,13 @@
+targets:
+  $default:
+    builders:
+      auto_construction|auto_builder:
+        enabled: true
+
+builders:
+  auto_builder:
+    import: 'package:auto_construction/builder.dart'
+    builder_factories: ['autoBuilder']
+    build_extensions: { '.dart': [] }
+    auto_apply: dependents
+    build_to: cache
