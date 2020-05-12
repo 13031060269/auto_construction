@@ -1,0 +1,3 @@
+class AutoConstruction {
+  const AutoConstruction();
+}

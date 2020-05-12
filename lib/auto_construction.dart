@@ -1,4 +1,1 @@
-library auto_construction;
-class AutoConstruction {
-  const AutoConstruction();
-}
+export 'src/auto_construction.dart';
