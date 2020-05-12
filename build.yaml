@@ -8,6 +8,6 @@ builders:
   auto_builder:
     import: 'package:auto_construction/src/builder.dart'
     builder_factories: ['autoBuilder']
-    build_extensions: { '.dart': ['.auto_construction.g.dart'] }
+    build_extensions: { '.dart': [] }
     auto_apply: dependents
     build_to: cache
