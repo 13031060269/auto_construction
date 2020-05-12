@@ -6,7 +6,7 @@ targets:
 
 builders:
   auto_builder:
-    import: 'package:arc/auto_construction/builder.dart'
+    import: 'package:src/auto_construction/builder.dart'
     builder_factories: ['autoBuilder']
     build_extensions: { '.dart': [] }
     auto_apply: dependents
