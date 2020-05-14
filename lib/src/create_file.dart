@@ -61,6 +61,7 @@ class CreateFile {
       sb.write(" extends $superName");
     }
     sb.write(">() {");
+    sb.writeln();
     sb.writeln("\tvar result;");
 
     sb.writeln("\tswitch (autoTypeOf<T>()) {");
