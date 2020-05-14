@@ -100,7 +100,7 @@ class __Builder extends Builder {
       _elements.forEach((e) {
         if (e._element.isPublic &&
             !e._element.isAbstract &&
-            type.isSuperOf(e._element)) {
+            type.isAssignableFrom(e._element)) {
           file.add(e._element, e._assetId);
         }
       });
