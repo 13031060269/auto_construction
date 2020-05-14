@@ -55,7 +55,7 @@ class CreateFile {
     _imports.forEach((element) {
       sb.write(element);
     });
-//    sb.writeln("Type _typeOf<T>() => T;");
+
     sb.write("T auto${superName}Create<T");
     if (superName != null) {
       sb.write(" extends $superName");
@@ -63,16 +63,16 @@ class CreateFile {
     sb.write(">() {");
     sb.writeln();
     sb.writeln("\tvar result;");
+    sb.writeln("\tvar type = autoTypeOf<T>();");
 
-    sb.writeln("\tswitch (autoTypeOf<T>()) {");
+    sb.writeln("\tswitch (type) {");
     _names.forEach((element) {
       sb.writeln("\t\tcase $element:");
       sb.writeln("\t\t\tresult = $element();");
       sb.writeln("\t\t\tbreak;");
     });
     sb.writeln("\t\tdefault:");
-    sb.writeln("\t\t\tresult = null;");
-    sb.writeln("\t\t\tbreak;");
+    sb.writeln("\t\t\tthrow Exception(\"\$type 无法实例化\");");
     sb.writeln("\t}");
     sb.writeln("\treturn result;");
     sb.writeln("}");
