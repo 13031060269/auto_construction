@@ -41,7 +41,8 @@ class CreateFile {
         '''import "package:${assetId.path.replaceAll("lib", assetId.package)}";\n''');
     _names.add(element.displayName);
   }
-  save(){
+
+  save() {
     _timer?.cancel();
     _timer = Timer(Duration(seconds: 2), _save);
   }
@@ -55,7 +56,7 @@ class CreateFile {
       sb.write(element);
     });
 //    sb.writeln("Type _typeOf<T>() => T;");
-    sb.write("T autoCreate<T");
+    sb.write("T auto${superName}Create<T");
     if (superName != null) {
       sb.write(" extends $superName");
     }
