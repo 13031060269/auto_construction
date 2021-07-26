@@ -6,8 +6,9 @@ import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 
 class CreateFile {
-  Timer _timer;
+  Timer? _timer;
   File _file;
+  String? superName;
 
   CreateFile(this._file) {
     if (_file.existsSync()) {
@@ -15,20 +16,10 @@ class CreateFile {
     }
   }
 
-  String superName;
-
   factory CreateFile.create(String file) => CreateFile(File(file));
 
   HashSet<String> _imports = HashSet();
   HashSet<String> _names = HashSet();
-
-  addSuper(String mSuper) {
-    var split = mSuper.split("#");
-    if (split != null && split.length == 2) {
-      _imports.add('''import "${split[0]}";\n''');
-      superName = split[1];
-    }
-  }
 
   addSuperElement(Element element, AssetId assetId) {
     _imports.add(
