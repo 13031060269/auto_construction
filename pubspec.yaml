@@ -1,17 +1,17 @@
 name: auto_construction
 description: auto create from no parameters construction
-version: 0.0.1
+version: 0.0.2
 author:
 homepage:
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.10.0"
+  sdk: ">=2.13.0 <3.0.0"
+  flutter: ">=2.2.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  source_gen:
+  source_gen: ^1.0.3
 
 dev_dependencies:
   flutter_test:
